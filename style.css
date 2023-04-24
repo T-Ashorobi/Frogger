@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+.grid {
+  /* width: 620px; */
+  height: 600px;
+  width: 600px;
+  /* aspect-ratio: auto; */
+  /* border: 3px solid brown; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: 50px;
+  /* aspect-ratio: 1; */
+  height: 50px;
+  border: 1px solid black;
+}
+
+.sp {
+  background-color: black;
+}
+
+.ep {
+  background-color: aquamarine;
+}
+
+.rd-1,
+.rd-2,
+.rd-3,
+.rd-4,
+.rd-5 {
+  background-color: yellow;
+}
+
+.frog {
+  background-color: brown;
+}
