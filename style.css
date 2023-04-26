@@ -38,3 +38,11 @@
 .frog {
   background-color: brown;
 }
+
+.car1,
+.car2,
+.car3,
+.car4,
+.car5 {
+  background-color: darkblue;
+}
