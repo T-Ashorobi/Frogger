@@ -4,6 +4,7 @@ let endPoint;
 let frogPosition = 138;
 const width = 12;
 let car1Position = 12;
+let car1_2Position = 12; //I want to add a setTimeout and it'll move at the same pace as car1;
 let car2Position = 47;
 let car3Position = 60;
 let car4Position = 95;
@@ -26,11 +27,11 @@ const startButton = document
     car3Display(car3Position);
     car4Display(car4Position);
     car5Display(car5Position);
-    car1Timer = setInterval(moveRight, 500); // this isn't regestering because its within a function. -> Its because it was set to a "const". Once it Hugo changed it to a "let" Im able to access transfer its value in all different scopes.
-    car2Timer = setInterval(moveLeft1, 500);
-    car3Timer = setInterval(moveRight3, 500);
-    car4Timer = setInterval(moveLeft2, 500);
-    car5Timer = setInterval(moveRight5, 500);
+    car1Timer = setInterval(moveRight, 200); // this isn't regestering because its within a function. -> Its because it was set to a "const". Once it Hugo changed it to a "let" Im able to access transfer its value in all different scopes.
+    car2Timer = setInterval(moveLeft1, 300);
+    car3Timer = setInterval(moveRight3, 600);
+    car4Timer = setInterval(moveLeft2, 800);
+    car5Timer = setInterval(moveRight5, 700);
   });
 /* [bug-1] a user can hit this button multiple time and recreate multiple grids.
  */
@@ -57,11 +58,9 @@ function createAGrid() {
     .slice(0, 12)
     .forEach((block) => block.classList.add("ep"));
 
-  dangerRoad();
+  console.log(endPoint);
 
-  // frogMove();
-  // const car1Timer = setInterval(moveRight, 2000);
-  // cellHolder[frogPosition].classList.add("frog");
+  dangerRoad();
 }
 
 function createACell() {
@@ -103,24 +102,19 @@ function frogMove(e) {
   // Why can i not start at "gridCreator?" = There's only one grid item. If i hard coded multiple div's then i could use "gridCreator".
 
   hideFrog();
-  // const key = event.key;
-  // console.log(e);
-  if (e.key === "ArrowLeft") {
-    // cellHolder[frogPosition].classList.add("frog");
+
+  if (e.key === "ArrowLeft" && frogPosition % width !== 0) {
     frogPosition -= 1;
-    // console.log("arrow left");
-  } else if (e.key === "ArrowUp") {
+    // % only gives you the remainder its not division.
+  } else if (e.key === "ArrowUp" && frogPosition - width > 0) {
     frogPosition -= width;
-    // console.log("arrow top");
-  } else if (e.key === "ArrowRight") {
-    // cellHolder[frogPosition].classList.add("frog");
+  } else if (e.key === "ArrowRight" && frogPosition % 12 !== 11) {
     frogPosition += 1;
-    // console.log("arrow right");
-  } else if (e.key === "ArrowDown") {
+  } else if (e.key === "ArrowDown" && frogPosition + width < 144) {
     frogPosition += width;
-    // console.log("arrow down");
   }
-  if (thereIsCar5(frogPosition)) {
+
+  if (thereIsCar1(frogPosition)) {
     // console.log("hit");
     clearInterval(car1Timer);
     window.alert(
@@ -150,9 +144,16 @@ function frogMove(e) {
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+  } else if (cellHolder[frogPosition].classList.contains("ep")) {
+    console.log(cellHolder[frogPosition]);
+    setTimeout(() => {
+      window.alert("congrats you've made it safely to the other side");
+    }, 200);
   }
+
   displayFrog();
 }
+console.log(endPoint);
 //This is place outside so if a keypress is heard it'll react immediately.
 document.addEventListener("keydown", frogMove);
 
@@ -185,7 +186,7 @@ function moveRight() {
     car1Position = 11;
   }
   if (thereIsAFrog(car1Position)) {
-    console.log("hit");
+    // console.log("hit");
     clearInterval(car1Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
   }
@@ -213,7 +214,7 @@ function moveLeft1() {
   hideCar2(car2Position);
   car2Display(--car2Position);
   if (thereIsAFrog(car2Position)) {
-    console.log("hit");
+    // console.log("hit");
     clearInterval(car2Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
   }
@@ -242,7 +243,7 @@ function moveRight3() {
   hideCar3(car3Position);
   car3Display(++car3Position);
   if (thereIsAFrog(car3Position)) {
-    console.log("hit");
+    // console.log("hit");
     clearInterval(car3Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
   }
@@ -271,7 +272,7 @@ function moveLeft2() {
   hideCar4(car4Position);
   car4Display(--car4Position);
   if (thereIsAFrog(car4Position)) {
-    console.log("hit");
+    // console.log("hit");
     clearInterval(car4Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
   }
@@ -301,7 +302,7 @@ function moveRight5() {
   hideCar5(car5Position);
   car5Display(++car5Position);
   if (thereIsAFrog(car5Position)) {
-    console.log("hit");
+    // console.log("hit");
     clearInterval(car5Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
   }
@@ -335,6 +336,10 @@ function thereIsCar5(position5) {
   // return cellHolder[position1].querySelectorAll("car");
   return cellHolder[position5].classList.contains("car5");
 }
+
+// function endGame() {
+//   return window.alert("congrats you've made it safely to the other side");
+// }
 
 //I can also add this for the cars to see if there's a frog.
 
