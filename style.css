@@ -1,5 +1,58 @@
+@font-face {
+  font-family: "froggy-font";
+  src: url("../Frogger/font/Sleepy-Book.ttf");
+}
+
 * {
   box-sizing: border-box;
+}
+
+/* body {
+
+} */
+
+#main {
+  background: url("./images/cypress-trees-Provence.jpg.webp");
+  margin: auto;
+  height: 900px;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  /* background-color: green; */
+  /* justify-content: center; */
+  /* align-self: center; */
+}
+
+h1 {
+  text-align: center;
+  font-stretch: extra-expanded;
+  margin-top: 75px;
+  margin-bottom: 0px;
+  font-size: 2.5rem;
+  font-family: "froggy-font";
+  color: green;
+}
+
+h1 span {
+  color: red;
+}
+
+#startButton {
+  /* all: unset; */
+  width: 10rem;
+  height: 4rem;
+  border-radius: 10px;
+  border: 5px solid green;
+  align-self: center;
+  margin-top: 30px;
+  background-color: white;
+  font-family: "froggy-font";
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+  color: yellowgreen;
+  box-shadow: 8px 8px 0px yellow;
 }
 
 .grid {
@@ -8,15 +61,20 @@
   width: 600px;
   /* aspect-ratio: auto; */
   /* border: 3px solid brown; */
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
+  background-color: black;
+  align-self: center;
+  /* border-radius: 50px; */
+  /* margin: auto; */
 }
 
 .cell {
   width: 50px;
   /* aspect-ratio: 1; */
   height: 50px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .sp {
@@ -33,6 +91,20 @@
 .rd-4,
 .rd-5 {
   background-color: yellow;
+  background-color: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 34%,
+    rgba(1, 1, 1, 1) 45%,
+    rgba(242, 220, 18, 1) 45%,
+    rgba(242, 220, 18, 1) 47%,
+    rgba(0, 0, 0, 1) 47%,
+    rgba(0, 0, 0, 1) 54%,
+    rgba(242, 220, 18, 1) 54%,
+    rgba(242, 220, 18, 1) 56%,
+    rgba(0, 0, 0, 1) 56%
+  );
+  /* background-image: url("./images/road-top-view-asphalt-highway-yellow-marks-asphalt-highway-road-top-view-yellow-marks-111250552.jpg"); */
 }
 
 .frog {
@@ -41,25 +113,28 @@
 
 .car1,
 .car1_2,
-.car1_3,
 .car1_4,
-.car1_5,
 .car2,
 .car2_2,
 .car2_3,
 .car2_4,
 .car3,
 .car3_2,
-.car3_3,
 .car4,
-.car4_2,
 .car5 {
-  background-color: darkblue;
+  background-image: url("./images/car-orange.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 10px 0px;
 }
 
 .car1_3,
 .car1_5,
 .car4_2,
 .car3_3 {
-  background-color: crimson;
+  background: url("./images/simple-travel-car-top_view.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* background-color: black; */
+  margin: 10px 0px;
 }
