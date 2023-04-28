@@ -181,100 +181,70 @@ function frogMove(e) {
   if (thereIsCar1(frogPosition)) {
     // console.log("hit");
     clearInterval(car1Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar1_2(frogPosition)) {
     clearInterval(car1_2Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar1_3(frogPosition)) {
     clearInterval(car1_3Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar1_4(frogPosition)) {
     clearInterval(car1_4Timer);
-    window.alert(
-      "You hopped into the path of a car. You Lost, Please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar1_5(frogPosition)) {
     clearInterval(car1_5Timer);
-    window.alert(
-      "You hopped into the path of a car. You Lost, Please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar2(frogPosition)) {
     // console.log("hit");
     clearInterval(car2Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar2_2(frogPosition)) {
     clearInterval(car2_2Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar2_3(frogPosition)) {
     clearInterval(car2_3Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar2_4(frogPosition)) {
     clearInterval(car2_4Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar3(frogPosition)) {
     // console.log("hit");
     clearInterval(car3Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar3_2(frogPosition)) {
     // console.log("hit");
     clearInterval(car3_2Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar3_3(frogPosition)) {
     // console.log("hit");
     clearInterval(car3_3Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar4(frogPosition)) {
     // console.log("hit");
     clearInterval(car4Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar4_2(frogPosition)) {
     // console.log("hit");
     clearInterval(car4_2Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar5(frogPosition)) {
     // console.log("hit");
     clearInterval(car1Timer);
-    window.alert(
-      "You hopped into the path of a car. You lost, please refresh the game."
-    );
+    window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (cellHolder[frogPosition].classList.contains("ep")) {
     console.log(cellHolder[frogPosition]);
@@ -321,7 +291,7 @@ function moveRight() {
   if (thereIsAFrog(car1Position)) {
     // console.log("hit");
     clearInterval(car1Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -351,7 +321,7 @@ function moveRight1_2() {
   if (thereIsAFrog(car1_2Position)) {
     // console.log("hit");
     clearInterval(car1_2Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -380,7 +350,7 @@ function moveRight1_3() {
   }
   if (thereIsAFrog(car1_3Position)) {
     clearInterval(car1_3Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -409,7 +379,7 @@ function moveRight1_4() {
   }
   if (thereIsAFrog(car1_4Position)) {
     clearInterval(car1_4Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -436,7 +406,7 @@ function moveRight1_5() {
   }
   if (thereIsAFrog(car1_5Position)) {
     clearInterval(car1_5Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -469,7 +439,7 @@ function moveLeft1() {
   if (thereIsAFrog(car2Position)) {
     // console.log("hit");
     clearInterval(car2Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -501,7 +471,7 @@ function moveLeft1_2() {
   if (thereIsAFrog(car2_2Position)) {
     // console.log("hit");
     clearInterval(car2_2Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -533,7 +503,7 @@ function moveLeft1_3() {
   if (thereIsAFrog(car2_3Position)) {
     // console.log("hit");
     clearInterval(car2_3Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -564,7 +534,7 @@ function moveLeft1_4() {
   if (thereIsAFrog(car2_4Position)) {
     // console.log("hit");
     clearInterval(car2_4Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -595,7 +565,7 @@ function moveRight3() {
   if (thereIsAFrog(car3Position)) {
     // console.log("hit");
     clearInterval(car3Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -627,7 +597,7 @@ function moveRight3_2() {
   if (thereIsAFrog(car3_2Position)) {
     // console.log("hit");
     clearInterval(car3_2Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -658,7 +628,7 @@ function moveRight3_3() {
   if (thereIsAFrog(car3_3Position)) {
     // console.log("hit");
     clearInterval(car3_3Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -690,7 +660,7 @@ function moveLeft2() {
   if (thereIsAFrog(car4Position)) {
     // console.log("hit");
     clearInterval(car4Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -723,7 +693,7 @@ function moveLeft2_2() {
   if (thereIsAFrog(car4_2Position)) {
     // console.log("hit");
     clearInterval(car4_2Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
@@ -756,7 +726,7 @@ function moveRight5() {
   if (thereIsAFrog(car5Position)) {
     // console.log("hit");
     clearInterval(car5Timer);
-    window.alert("A car ran over you. You lost, please refresh the game.");
+    window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
   }
 }
