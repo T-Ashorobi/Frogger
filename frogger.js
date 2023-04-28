@@ -35,6 +35,9 @@ let car3_3Timer;
 let car4Timer;
 let car4_2Timer;
 let car5Timer;
+const sounds = document.getElementById("sound");
+const soundz = document.getElementById("soundz");
+const soundzz = document.getElementById("soundzz");
 const startButton = document
   .querySelector("#startButton")
   .addEventListener("click", (event) => {
@@ -170,7 +173,11 @@ function frogMove(e) {
   if (e.key === "ArrowLeft" && frogPosition % width !== 0) {
     frogPosition -= 1;
     // % only gives you the remainder its not division.
-  } else if (e.key === "ArrowUp" && frogPosition - width > 0) {
+  } else if (
+    e.key === "ArrowUp" &&
+    frogPosition - width > 0 &&
+    !thereIsCar5(frogPosition)
+  ) {
     frogPosition -= width;
   } else if (e.key === "ArrowRight" && frogPosition % 12 !== 11) {
     frogPosition += 1;
@@ -180,75 +187,91 @@ function frogMove(e) {
 
   if (thereIsCar1(frogPosition)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car1Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar1_2(frogPosition)) {
+    deathSound();
     clearInterval(car1_2Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar1_3(frogPosition)) {
+    deathSound();
     clearInterval(car1_3Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar1_4(frogPosition)) {
+    deathSound();
     clearInterval(car1_4Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar1_5(frogPosition)) {
+    deathSound();
     clearInterval(car1_5Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar2(frogPosition)) {
+    deathSound();
     // console.log("hit");
     clearInterval(car2Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar2_2(frogPosition)) {
+    deathSound();
     clearInterval(car2_2Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar2_3(frogPosition)) {
+    deathSound();
     clearInterval(car2_3Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar2_4(frogPosition)) {
+    deathSound();
     clearInterval(car2_4Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar3(frogPosition)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car3Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar3_2(frogPosition)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car3_2Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar3_3(frogPosition)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car3_3Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar4(frogPosition)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car4Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar4_2(frogPosition)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car4_2Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (thereIsCar5(frogPosition)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car1Timer);
     window.alert("Putain de merde!. Tu es mort, please refresh the game.");
     hideFrog();
   } else if (cellHolder[frogPosition].classList.contains("ep")) {
     console.log(cellHolder[frogPosition]);
     setTimeout(() => {
+      winSound();
       window.alert("congrats you've made it safely to the other side");
     }, 200);
     hideFrog();
@@ -260,7 +283,7 @@ function frogMove(e) {
 console.log(endPoint);
 //This is place outside so if a keypress is heard it'll react immediately.
 document.addEventListener("keydown", frogMove);
-
+/*----------------------Frog creation--------------------------*/
 function displayFrog() {
   cellHolder[frogPosition].classList.add("frog");
 }
@@ -268,6 +291,8 @@ function displayFrog() {
 function hideFrog() {
   cellHolder[frogPosition].classList.remove("frog");
 }
+/*----------------------Frog creation--------------------------*/
+
 /*----------car display and movement section---------------------- */
 
 function car1Display(index) {
@@ -290,6 +315,7 @@ function moveRight() {
   }
   if (thereIsAFrog(car1Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car1Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -320,6 +346,7 @@ function moveRight1_2() {
   }
   if (thereIsAFrog(car1_2Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car1_2Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -349,6 +376,7 @@ function moveRight1_3() {
     car1_3Position = 11;
   }
   if (thereIsAFrog(car1_3Position)) {
+    deathSound();
     clearInterval(car1_3Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -378,6 +406,7 @@ function moveRight1_4() {
     car1_4Position = 11;
   }
   if (thereIsAFrog(car1_4Position)) {
+    deathSound();
     clearInterval(car1_4Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -405,6 +434,7 @@ function moveRight1_5() {
     car1_5Position = 11;
   }
   if (thereIsAFrog(car1_5Position)) {
+    deathSound();
     clearInterval(car1_5Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -438,6 +468,7 @@ function moveLeft1() {
   car2Display(--car2Position);
   if (thereIsAFrog(car2Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car2Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -470,6 +501,7 @@ function moveLeft1_2() {
   car2_2Display(--car2_2Position);
   if (thereIsAFrog(car2_2Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car2_2Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -502,6 +534,7 @@ function moveLeft1_3() {
   car2_3Display(--car2_3Position);
   if (thereIsAFrog(car2_3Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car2_3Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -533,6 +566,7 @@ function moveLeft1_4() {
   car2_4Display(--car2_4Position);
   if (thereIsAFrog(car2_4Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car2_4Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -564,6 +598,7 @@ function moveRight3() {
   car3Display(++car3Position);
   if (thereIsAFrog(car3Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car3Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -596,6 +631,7 @@ function moveRight3_2() {
   car3_2Display(++car3_2Position);
   if (thereIsAFrog(car3_2Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car3_2Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -627,6 +663,7 @@ function moveRight3_3() {
   car3_3Display(++car3_3Position);
   if (thereIsAFrog(car3_3Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car3_3Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -659,6 +696,7 @@ function moveLeft2() {
   car4Display(--car4Position);
   if (thereIsAFrog(car4Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car4Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -692,6 +730,7 @@ function moveLeft2_2() {
   car4_2Display(--car4_2Position);
   if (thereIsAFrog(car4_2Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car4_2Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -725,6 +764,7 @@ function moveRight5() {
   car5Display(++car5Position);
   if (thereIsAFrog(car5Position)) {
     // console.log("hit");
+    deathSound();
     clearInterval(car5Timer);
     window.alert("PUTAIN!!!!!!. You lost, please refresh the game.");
     hideFrog();
@@ -847,6 +887,13 @@ function thereIsCar5(position5) {
   return cellHolder[position5].classList.contains("car5");
 }
 
+function deathSound() {
+  soundz.play();
+}
+
+function winSound() {
+  soundzz.play();
+}
 // function endGame() {
 //   return window.alert("congrats you've made it safely to the other side");
 // }
