@@ -7,12 +7,15 @@
   box-sizing: border-box;
 }
 
-/* body {
-
-} */
+body {
+  background-color: black;
+  /* background: url("./images/cypress-trees-Provence.jpg.webp");
+  background-size: cover; */
+  overflow: hidden;
+}
 
 #main {
-  background: url("./images/cypress-trees-Provence.jpg.webp");
+  /* background: url("./images/cypress-trees-Provence.jpg.webp"); */
   margin: auto;
   height: 900px;
   background-size: cover;
@@ -28,11 +31,13 @@
 h1 {
   text-align: center;
   font-stretch: extra-expanded;
-  margin-top: 75px;
-  margin-bottom: 0px;
+  margin-top: 200px;
+  /* margin-bottom: 0px; */
   font-size: 2.5rem;
   font-family: "froggy-font";
   color: green;
+  align-self: flex-end;
+  align-self: center;
 }
 
 h1 span {
@@ -46,7 +51,7 @@ h1 span {
   border-radius: 10px;
   border: 5px solid green;
   align-self: center;
-  margin-top: 30px;
+  margin-top: 25px;
   background-color: white;
   font-family: "froggy-font";
   font-size: 1.5rem;
@@ -55,13 +60,21 @@ h1 span {
   box-shadow: 8px 8px 0px yellow;
 }
 
+#startButton:hover {
+  transition: 0.8s;
+  /* transition: -0.9s; */
+  transform: scale(1.5);
+}
+
 .grid {
   /* width: 620px; */
   height: 600px;
   width: 600px;
   /* aspect-ratio: auto; */
   /* border: 3px solid brown; */
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  margin-right: 60px;
   display: flex;
   flex-wrap: wrap;
   background-color: black;
@@ -78,11 +91,14 @@ h1 span {
 }
 
 .sp {
-  background-color: black;
+  /* background-color: black; */
+  background: url("./images/green-cartoon-grass-copy-2.jpg");
 }
 
 .ep {
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
+  background-color: green;
+  background-image: url("./images/swimming-pool-or-ocean-water-background-copy-2.jpg");
 }
 
 .rd-1,
@@ -108,18 +124,16 @@ h1 span {
 }
 
 .frog {
-  background-color: brown;
+  background: url("./images/Subject-copy-2.png");
 }
 
 .car1,
 .car1_2,
 .car1_4,
 .car2,
-.car2_2,
 .car2_3,
-.car2_4,
 .car3,
-.car3_2,
+.car3_3,
 .car4,
 .car5 {
   background-image: url("./images/car-orange.png");
@@ -130,8 +144,10 @@ h1 span {
 
 .car1_3,
 .car1_5,
+.car2_2,
+.car2_4,
 .car4_2,
-.car3_3 {
+.car3_2 {
   background: url("./images/simple-travel-car-top_view.png");
   background-repeat: no-repeat;
   background-size: contain;

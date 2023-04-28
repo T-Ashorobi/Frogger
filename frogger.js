@@ -47,55 +47,55 @@ const startButton = document
     car4Display(car4Position);
     car5Display(car5Position);
 
-    car1Timer = setInterval(moveRight, 50); // this isn't regestering because its within a function. -> Its because it was set to a "const". Once it Hugo changed it to a "let" Im able to access transfer its value in all different scopes.
+    car1Timer = setInterval(moveRight, 150); // this isn't regestering because its within a function. -> Its because it was set to a "const". Once it Hugo changed it to a "let" Im able to access transfer its value in all different scopes.
     setTimeout(() => {
       // moveRight1_2();
-      setInterval(moveRight1_2, 200);
+      setInterval(moveRight1_2, 150);
     }, 1000);
 
     setTimeout(() => {
-      setInterval(moveRight1_3, 500);
+      setInterval(moveRight1_3, 50);
     }, 2000); // have one of the cars move so fast but it'll be in a different color.
 
     setTimeout(() => {
-      setInterval(moveRight1_4, 100);
+      setInterval(moveRight1_4, 150);
     }, 3000);
 
     setTimeout(() => {
-      setInterval(moveRight1_5, 200);
+      setInterval(moveRight1_5, 30);
     }, 4000);
 
-    car2Timer = setInterval(moveLeft1, 300);
+    car2Timer = setInterval(moveLeft1, 150);
 
     setTimeout(() => {
-      setInterval(moveLeft1_2, 200);
+      setInterval(moveLeft1_2, 75);
     }, 1000);
 
     setTimeout(() => {
-      setInterval(moveLeft1_3, 200);
+      setInterval(moveLeft1_3, 100);
     }, 2000);
 
     setTimeout(() => {
-      setInterval(moveLeft1_4, 200);
+      setInterval(moveLeft1_4, 50);
     }, 3000);
 
-    car3Timer = setInterval(moveRight3, 600);
+    car3Timer = setInterval(moveRight3, 150);
 
     setTimeout(() => {
-      setInterval(moveRight3_2, 200);
+      setInterval(moveRight3_2, 50);
     }, 1000);
 
     setTimeout(() => {
       setInterval(moveRight3_3, 200);
     }, 2000);
 
-    car4Timer = setInterval(moveLeft2, 800);
+    car4Timer = setInterval(moveLeft2, 100);
 
     setTimeout(() => {
-      setInterval(moveLeft2_2, 200);
+      setInterval(moveLeft2_2, 75);
     }, 2000);
 
-    car5Timer = setInterval(moveRight5, 700);
+    car5Timer = setInterval(moveRight5, 100);
   });
 /* [bug-1] a user can hit this button multiple time and recreate multiple grids.
  */
@@ -184,88 +184,104 @@ function frogMove(e) {
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar1_2(frogPosition)) {
     clearInterval(car1_2Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar1_3(frogPosition)) {
     clearInterval(car1_3Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar1_4(frogPosition)) {
     clearInterval(car1_4Timer);
     window.alert(
       "You hopped into the path of a car. You Lost, Please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar1_5(frogPosition)) {
     clearInterval(car1_5Timer);
     window.alert(
       "You hopped into the path of a car. You Lost, Please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar2(frogPosition)) {
     // console.log("hit");
     clearInterval(car2Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar2_2(frogPosition)) {
     clearInterval(car2_2Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar2_3(frogPosition)) {
     clearInterval(car2_3Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar2_4(frogPosition)) {
     clearInterval(car2_4Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar3(frogPosition)) {
     // console.log("hit");
     clearInterval(car3Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar3_2(frogPosition)) {
     // console.log("hit");
     clearInterval(car3_2Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar3_3(frogPosition)) {
     // console.log("hit");
     clearInterval(car3_3Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar4(frogPosition)) {
     // console.log("hit");
     clearInterval(car4Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar4_2(frogPosition)) {
     // console.log("hit");
     clearInterval(car4_2Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (thereIsCar5(frogPosition)) {
     // console.log("hit");
     clearInterval(car1Timer);
     window.alert(
       "You hopped into the path of a car. You lost, please refresh the game."
     );
+    hideFrog();
   } else if (cellHolder[frogPosition].classList.contains("ep")) {
     console.log(cellHolder[frogPosition]);
     setTimeout(() => {
       window.alert("congrats you've made it safely to the other side");
     }, 200);
+    hideFrog();
   }
 
   displayFrog();
@@ -306,6 +322,7 @@ function moveRight() {
     // console.log("hit");
     clearInterval(car1Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 
@@ -335,6 +352,7 @@ function moveRight1_2() {
     // console.log("hit");
     clearInterval(car1_2Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 
@@ -363,6 +381,7 @@ function moveRight1_3() {
   if (thereIsAFrog(car1_3Position)) {
     clearInterval(car1_3Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 
@@ -391,6 +410,7 @@ function moveRight1_4() {
   if (thereIsAFrog(car1_4Position)) {
     clearInterval(car1_4Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 /*----------car1_4---------------------- */
@@ -417,6 +437,7 @@ function moveRight1_5() {
   if (thereIsAFrog(car1_5Position)) {
     clearInterval(car1_5Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 
@@ -449,6 +470,7 @@ function moveLeft1() {
     // console.log("hit");
     clearInterval(car2Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 /*----------car2---------------------- */
@@ -480,6 +502,7 @@ function moveLeft1_2() {
     // console.log("hit");
     clearInterval(car2_2Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 
@@ -511,6 +534,7 @@ function moveLeft1_3() {
     // console.log("hit");
     clearInterval(car2_3Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 /*----------car2_3---------------------- */
@@ -541,6 +565,7 @@ function moveLeft1_4() {
     // console.log("hit");
     clearInterval(car2_4Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 /*----------car2_4---------------------- */
@@ -571,6 +596,7 @@ function moveRight3() {
     // console.log("hit");
     clearInterval(car3Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 
@@ -602,6 +628,7 @@ function moveRight3_2() {
     // console.log("hit");
     clearInterval(car3_2Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 
@@ -632,6 +659,7 @@ function moveRight3_3() {
     // console.log("hit");
     clearInterval(car3_3Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 /*----------car3_3---------------------- */
@@ -663,6 +691,7 @@ function moveLeft2() {
     // console.log("hit");
     clearInterval(car4Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 
@@ -695,6 +724,7 @@ function moveLeft2_2() {
     // console.log("hit");
     clearInterval(car4_2Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 
@@ -727,6 +757,7 @@ function moveRight5() {
     // console.log("hit");
     clearInterval(car5Timer);
     window.alert("A car ran over you. You lost, please refresh the game.");
+    hideFrog();
   }
 }
 /*----------car5---------------------- */
